@@ -1,0 +1,284 @@
+{
+  "monthly_schedules": [
+    {
+      "month": 1,
+      "period": "September 2025",
+      "focus": "Onboarding and Baseline Assessment",
+      "schedule": [
+        {
+          "week": 1,
+          "activities": [
+            "Initial consultation with Ruby and Dr. Warren.",
+            "Submission of medical history via PA, Sarah Tan.",
+            "Introduction to Advik for wearable data analysis."
+          ]
+        },
+        {
+          "week": 2,
+          "activities": [
+            "Business Trip to UK (Sept 8-12).",
+            "Follow initial recommendations for sleep hygiene during travel."
+          ]
+        },
+        {
+          "week": 3,
+          "activities": [
+            "Comprehensive Diagnostic Test Panel (Sept 16).",
+            "Review of initial test results with Dr. Warren."
+          ]
+        },
+        {
+          "week": 4,
+          "activities": [
+            "Receive initial personalized nutrition plan from Carla.",
+            "Receive initial personalized exercise plan from Rachel.",
+            "Review and provide feedback on the initial integrated plan."
+          ]
+        }
+      ]
+    },
+    {
+      "month": 2,
+      "period": "October 2025",
+      "focus": "Plan Implementation and First Adjustments",
+      "schedule": [
+        {
+          "week": 1,
+          "activities": [
+            "Begin updated exercise plan with HIIT.",
+            "Regular check-ins with Rachel on workout challenges."
+          ]
+        },
+        {
+          "week": 2,
+          "activities": [
+            "Check-in with Carla on nutrition plan adherence.",
+            "Business Trip to US (starts Oct 13)."
+          ]
+        },
+        {
+          "week": 3,
+          "activities": [
+            "Continue business trip in the US.",
+            "Implement hotel-friendly workout options."
+          ]
+        },
+        {
+          "week": 4,
+          "activities": [
+            "Return from travel and re-engage with home routine.",
+            "Follow-up with Advik on sleep data improvements.",
+            "Coordinate with Ruby for next month's diagnostic tests."
+          ]
+        }
+      ]
+    },
+    {
+      "month": 3,
+      "period": "November 2025",
+      "focus": "Addressing Adherence and Refining Strategy",
+      "schedule": [
+        {
+          "week": 1,
+          "activities": [
+            "Three-Month Comprehensive Diagnostic Test Panel (Nov 2).",
+            "Review test results with Dr. Warren, focusing on slow ApoB progress."
+          ]
+        },
+        {
+          "week": 2,
+          "activities": [
+            "Business Trip to South Korea (starts Nov 10).",
+            "Utilize Carla's guide for healthy eating choices in Korea."
+          ]
+        },
+        {
+          "week": 3,
+          "activities": [
+            "Continue business trip in South Korea.",
+            "Attempt to maintain exercise consistency."
+          ]
+        },
+        {
+          "week": 4,
+          "activities": [
+            "Return from travel.",
+            "Introduction to mindfulness exercises from Advik for stress management."
+          ]
+        }
+      ]
+    },
+    {
+      "month": 4,
+      "period": "December 2025",
+      "focus": "Re-engagement and Cognitive Enhancement",
+      "schedule": [
+        {
+          "week": 1,
+          "activities": [
+            "Check-in call with Neel to discuss adherence challenges.",
+            "Start recommended supplements (Omega-3, B-complex) from Dr. Warren."
+          ]
+        },
+        {
+          "week": 2,
+          "activities": [
+            "Business Trip to Jakarta (starts Dec 8)."
+          ]
+        },
+        {
+          "week": 3,
+          "activities": [
+            "Continue business trip in Jakarta.",
+            "Focus on consistent sleep schedule as per Advik's guidance."
+          ]
+        },
+        {
+          "week": 4,
+          "activities": [
+            "Return from travel.",
+            "Receive and begin updated, higher-intensity workout plan from Rachel."
+          ]
+        }
+      ]
+    },
+    {
+      "month": 5,
+      "period": "January 2026",
+      "focus": "Building Momentum from Positive Results",
+      "schedule": [
+        {
+          "week": 1,
+          "activities": [
+            "Review encouraging test results with Dr. Warren.",
+            "Receive updated nutrition plan and UK restaurant guide from Carla."
+          ]
+        },
+        {
+          "week": 2,
+          "activities": [
+            "Business Trip to UK (starts Jan 12)."
+          ]
+        },
+        {
+          "week": 3,
+          "activities": [
+            "Continue business trip in the UK.",
+            "Implement more complex workout movements from Rachel's updated plan."
+          ]
+        },
+        {
+          "week": 4,
+          "activities": [
+            "Return from travel.",
+            "Review improved cognitive assessment scores with Advik."
+          ]
+        }
+      ]
+    },
+    {
+      "month": 6,
+      "period": "February 2026",
+      "focus": "Long-Term Planning and Sustainability",
+      "schedule": [
+        {
+          "week": 1,
+          "activities": [
+            "Six-Month Comprehensive Diagnostic Test Panel (Feb 1).",
+            "Review excellent results and shift focus to long-term strategy with Dr. Warren."
+          ]
+        },
+        {
+          "week": 2,
+          "activities": [
+            "Business Trip to US (starts Feb 9).",
+            "Strategy call with Neel to discuss long-term health vision."
+          ]
+        },
+        {
+          "week": 3,
+          "activities": [
+            "Continue business trip in the US.",
+            "Receive more flexible nutrition plan from Carla for easier travel adherence."
+          ]
+        },
+        {
+          "week": 4,
+          "activities": [
+            "Return from travel.",
+            "Consultation with Rachel on building a resilient and adaptable fitness routine."
+          ]
+        }
+      ]
+    },
+    {
+      "month": 7,
+      "period": "March 2026",
+      "focus": "Fine-Tuning and Advanced Health Metrics",
+      "schedule": [
+        {
+          "week": 1,
+          "activities": [
+            "Consultation with Advik to begin tracking Heart Rate Variability (HRV).",
+            "Discuss epigenetic testing with Dr. Warren."
+          ]
+        },
+        {
+          "week": 2,
+          "activities": [
+            "Business Trip to South Korea (starts Mar 9)."
+          ]
+        },
+        {
+          "week": 3,
+          "activities": [
+            "Continue business trip in South Korea.",
+            "Explore options for advanced testing post-trip."
+          ]
+        },
+        {
+          "week": 4,
+          "activities": [
+            "Return from travel.",
+            "Receive fine-tuned nutrition advice from Carla for peak performance.",
+            "Begin peak physical capacity workouts from Rachel."
+          ]
+        }
+      ]
+    },
+    {
+      "month": 8,
+      "period": "April 2026",
+      "focus": "Empowering Long-Term Self-Management",
+      "schedule": [
+        {
+          "week": 1,
+          "activities": [
+            "Final 8-month review call with Neel and the team.",
+            "Business Trip to Jakarta (starts Apr 6)."
+          ]
+        },
+        {
+          "week": 2,
+          "activities": [
+            "Continue business trip in Jakarta, applying learned self-management skills."
+          ]
+        },
+        {
+          "week": 3,
+          "activities": [
+            "Return from travel.",
+            "Transition to a quarterly check-in model with Elyx support."
+          ]
+        },
+        {
+          "week": 4,
+          "activities": [
+            "Continue with personalized plan independently.",
+            "Final data review with Advik confirming stable and optimized metrics."
+          ]
+        }
+      ]
+    }
+  ]
+}
