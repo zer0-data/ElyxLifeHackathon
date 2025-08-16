@@ -2,6 +2,7 @@
 
 from fastapi import APIRouter
 import json
+import os
 from ..config import DECISIONS_DATA_PATH
 
 router = APIRouter()
@@ -13,4 +14,6 @@ def get_decisions():
         with open(DECISIONS_DATA_PATH, 'r') as f:
             return json.load(f)
     except FileNotFoundError:
-        return {"error": "Decisions data not found."}, 404
+        return {"error": f"Decisions data not found at {DECISIONS_DATA_PATH}"}, 404
+    except json.JSONDecodeError:
+        return {"error": f"Invalid JSON format in {DECISIONS_DATA_PATH}"}, 500
