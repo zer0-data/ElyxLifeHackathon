@@ -1,0 +1,47 @@
+{
+  "persona_summary_track": [
+    {
+      "month": 1,
+      "title": "The Data-Driven Delegator",
+      "before_state": "Proactive and data-driven about his health, but feeling his current health management is 'very random and uncoordinated.' He is motivated by a family history of heart disease and the desire to be present for his family. He values efficiency and evidence-based approaches but is time-constrained and needs clear, concise action plans.",
+      "after_state": "Engaged with the Elyx service and has delegated the initial data gathering and planning. He is still in an observational phase, providing the necessary information but waiting to be presented with a clear strategy. His initial interactions are direct and focused on logistics and goals."
+    },
+    {
+      "month": 2,
+      "title": "The Time-Constrained Skeptic",
+      "before_state": "Has received the initial plan and is beginning to integrate the recommendations into his routine. He is observing the process and the team's capabilities.",
+      "after_state": "Starting to experience the friction between the ideal plan and the realities of his demanding travel schedule. He expresses skepticism about his ability to adhere to a challenging workout plan and notes his inability to follow the nutrition plan strictly due to business commitments. He is testing the system's flexibility."
+    },
+    {
+      "month": 3,
+      "title": "The Frustrated Client",
+      "before_state": "Following the plan intermittently but feeling the strain of travel and inconsistency. He sees only slow progress in his initial biomarker results.",
+      "after_state": "Expresses frustration with the slow progress and the difficulty of adhering to the plan while traveling. He is questioning the value and the practicality of the service, pushing back on the need for stricter adherence and highlighting his real-world constraints."
+    },
+    {
+      "month": 4,
+      "title": "The Re-Engaged Participant",
+      "before_state": "Feeling frustrated and questioning the service's approach given his lifestyle. He has been directly addressed by senior leadership about his adherence issues.",
+      "after_state": "More actively involved in the process after his concerns were acknowledged. The introduction of cognitive-enhancing supplements and a clearer focus on data-driven insights have piqued his interest. He is making a more conscious effort to be consistent, moving from a passive recipient to an active participant."
+    },
+    {
+      "month": 5,
+      "title": "The Motivated Achiever",
+      "before_state": "Re-engaged and making a better effort to adhere to the plan. He has started to see some tangible benefits.",
+      "after_state": "Highly motivated by significant, measurable improvements in his lab results (ApoB) and cognitive scores. He is starting to feel more energetic and focused, which reinforces the value of his efforts. He is now proactively connecting his positive feelings to the program's interventions."
+    },
+    {
+      "month": 6,
+      "title": "The Strategic Partner",
+      "before_state": "Feeling pleased with his progress and motivated to continue. He sees the direct impact of his consistency.",
+      "after_state": "His mindset has shifted from short-term fixes to long-term health investment. He is actively participating in discussions about sustainable habits and long-term strategy, viewing the Elyx team less as instructors and more as strategic partners in his health journey."
+    },
+    {
+      "month": 7,
+      "title": "The Inquisitive Explorer",
+      "before_state": "Confident in the foundational plan and consistently adhering to it. He has achieved his initial primary goals.",
+      "after_state": "Proactively asking about advanced health topics like HRV and epigenetic testing. His interest has expanded from solving a specific problem (heart disease risk) to optimizing his overall health and longevity. He is now a 'co-manager' of his health, curious about the 'why' behind the data."
+    },
+    {
+      "month": 8,
+      "title": "The Empowered Self-Manager
