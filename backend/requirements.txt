@@ -1,0 +1,5 @@
+fastapi
+uvicorn
+pydantic
+pandas
+scikit-learn  # For a simple vectorizer in retrieval_service
