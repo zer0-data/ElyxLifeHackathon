@@ -1,0 +1,674 @@
+[
+  {
+    "name": "Isabella Rossi",
+    "age": "38",
+    "gender": "Female",
+    "occupation": "Founder and CEO of a sustainable fashion brand",
+    "residence": "Singapore",
+    "goals": [
+      "Enhance creative output through better work-life balance",
+      "Improve joint health and mobility"
+    ],
+    "personality": "A visionary and compassionate leader, known for her creativity and dedication to ethical practices. She is resilient and resourceful, often drawing strength from her experience managing a chronic condition.",
+    "chronic_condition": "Rheumatoid Arthritis",
+    "tech": "Apple Watch"
+  },
+  {
+    "name": "Kenji Tanaka",
+    "age": 52,
+    "gender": "Male",
+    "occupation": "Chief Technology Officer",
+    "residence": "Singapore",
+    "goals": [
+      "Improve respiratory health to enhance physical stamina",
+      "Mentor the next generation of tech leaders"
+    ],
+    "personality": "A calm, analytical, and forward-thinking leader. He is a patient mentor who values deep work and a balanced lifestyle, a perspective shaped by managing his respiratory health for years.",
+    "chronic_condition": "Asthma",
+    "tech": "Apple Watch"
+  },
+  {
+    "name": "Fatima Al-Jamil",
+    "age": 41,
+    "gender": "Female",
+    "occupation": "Director of a non-profit organization",
+    "residence": "Singapore",
+    "goals": [
+      "Increase community engagement and program impact",
+      "Manage hormonal health and energy levels"
+    ],
+    "personality": "An empathetic and passionate advocate for social change. She is a natural community builder, driven by a desire to empower others. Her personal health journey has made her a strong proponent of holistic well-being.",
+    "chronic_condition": "Hypothyroidism",
+    "tech": "Oura Ring"
+  },
+  {
+    "name": "Alejandro Garcia",
+    "age": "58",
+    "gender": "Male",
+    "occupation": "Architect",
+    "residence": "Singapore",
+    "goals": [
+      "Design a landmark sustainable building",
+      "Improve sleep quality and reduce stress"
+    ],
+    "personality": "A meticulous and creative thinker with a passion for sustainable design. He is a quiet and observant individual who finds inspiration in nature. He is learning to prioritize rest to maintain his creative edge.",
+    "chronic_condition": "Insomnia",
+    "tech": "Oura Ring"
+  },
+  {
+    "name": "Priya Sharma",
+    "age": "35",
+    "gender": "Female",
+    "occupation": "Data Scientist",
+    "residence": "Singapore",
+    "goals": [
+      "Develop a breakthrough AI model",
+      "Manage gut health and reduce inflammation"
+    ],
+    "personality": "A highly analytical and intellectually curious individual. She is a problem-solver at heart and applies the same data-driven approach to managing her health as she does to her work.",
+    "chronic_condition": "Irritable Bowel Syndrome (IBS)",
+    "tech": "Oura Ring"
+  },
+  {
+    "name": "David Chen",
+    "age": 48,
+    "gender": "Male",
+    "occupation": "Head of a private equity firm",
+    "residence": "Singapore",
+    "goals": [
+      "Successfully close a major investment fund",
+      "Improve cardiovascular health and endurance"
+    ],
+    "personality": "A sharp, decisive, and results-oriented professional. He thrives in high-stakes environments but is also a dedicated family man who is now focusing on his long-term health with the same intensity he brings to his career.",
+    "chronic_condition": "High Cholesterol",
+    "tech": "Apple Watch"
+  },
+  {
+    "name": "Ngozi Okafor",
+    "age": 44,
+    "gender": "Female",
+    "occupation": "University Professor",
+    "residence": "Singapore",
+    "goals": [
+      "Publish a groundbreaking academic paper",
+      "Manage chronic pain and improve daily functioning"
+    ],
+    "personality": "A thoughtful, articulate, and dedicated educator. She is passionate about her field of study and is known for her engaging lectures. She is also a resilient individual who navigates her academic career while managing a persistent health condition.",
+    "chronic_condition": "Arthritis",
+    "tech": "Oura Ring"
+  },
+  {
+    "name": "Liam Murphy",
+    "age": 32,
+    "gender": "Male",
+    "occupation": "Chef and Restaurant Owner",
+    "residence": "Singapore",
+    "goals": [
+      "Earn a Michelin star for his restaurant",
+      "Manage GERD and digestive health"
+    ],
+    "personality": "A creative, passionate, and energetic individual with a flair for culinary arts. He is a perfectionist in the kitchen but has a warm and welcoming presence. He is learning to balance the demands of his career with the needs of his digestive system.",
+    "chronic_condition": "Acid Reflux",
+    "tech": "Apple Watch"
+  },
+  {
+    "name": "Aisha Khan",
+    "age": 55,
+    "gender": "Female",
+    "occupation": "Diplomat",
+    "residence": "Singapore",
+    "goals": [
+      "Negotiate a key international treaty",
+      "Maintain bone density and overall fitness"
+    ],
+    "personality": "A poised, articulate, and astute professional with a deep understanding of global affairs. She is a skilled negotiator and a respected figure in her field. She is proactive about her health, particularly focusing on age-related concerns.",
+    "chronic_condition": "High Blood Pressure",
+    "tech": "Apple Watch"
+  },
+  {
+    "name": "Mateo Hernandez",
+    "age": 49,
+    "gender": "Male",
+    "occupation": "Software Engineer",
+    "residence": "Singapore",
+    "goals": [
+      "Lead a team to develop a new software application",
+      "Manage chronic back pain and improve posture"
+    ],
+    "personality": "A logical, detail-oriented, and collaborative team player. He is a problem-solver who enjoys the intricacies of coding. He is actively seeking ways to improve his physical well-being to counteract the sedentary nature of his job.",
+    "chronic_condition": "Chronic Back Pain",
+    "tech": "Apple Watch"
+  },
+  {
+    "name": "Chloe Lim",
+    "age": 36,
+    "gender": "Female",
+    "occupation": "Marketing Director",
+    "residence": "Singapore",
+    "goals": [
+      "Launch a successful global marketing campaign",
+      "Manage anxiety and improve mental well-being"
+    ],
+    "personality": "A creative, energetic, and outgoing professional. She is a natural storyteller and a charismatic leader. She is also an advocate for mental health awareness and is open about her own journey with anxiety.",
+    "chronic_condition": "Generalized Anxiety Disorder (GAD)",
+    "tech": "Oura Ring"
+  },
+  {
+    "name": "Omar Al-Farsi",
+    "age": 59,
+    "gender": "Male",
+    "occupation": "Retired Naval Officer, now a Consultant",
+    "residence": "Singapore",
+    "goals": [
+      "Travel to three new countries this year",
+      "Manage his Type 2 Diabetes to stay active in retirement"
+    ],
+    "personality": "A disciplined, strategic, and pragmatic individual with a lifetime of leadership experience. He is now enjoying a more relaxed pace of life but approaches his health with the same level of discipline he applied in his career.",
+    "chronic_condition": "Type 2 Diabetes",
+    "tech": "Apple Watch"
+  },
+  {
+    "name": "Mei Lin Ho",
+    "age": 46,
+    "gender": "Female",
+    "occupation": "Financial Advisor",
+    "residence": "Singapore",
+    "goals": [
+      "Help her clients achieve financial independence",
+      "Manage her thyroid condition and maintain stable energy levels"
+    ],
+    "personality": "A trustworthy, analytical, and empathetic professional. She is a skilled planner and is dedicated to her clients' success. She applies the same long-term planning to managing her own health.",
+    "chronic_condition": "Hypothyroidism",
+    "tech": "Apple Watch"
+  },
+  {
+    "name": "Daniel Kim",
+    "age": 39,
+    "gender": "Male",
+    "occupation": "Journalist",
+    "residence": "Singapore",
+    "goals": [
+      "Write an investigative story that leads to positive change",
+      "Improve his sleep schedule and manage stress from deadlines"
+    ],
+    "personality": "A curious, persistent, and resourceful individual with a strong sense of justice. He is a compelling writer who is not afraid to ask tough questions. The high-stress nature of his job has made him prioritize his mental and physical health.",
+    "chronic_condition": "Chronic Migraines",
+    "tech": "Apple Watch"
+  },
+  {
+    "name": "Sofia Reyes",
+    "age": 43,
+    "gender": "Female",
+    "occupation": "Human Resources Manager",
+    "residence": "Singapore",
+    "goals": [
+      "Improve employee satisfaction and retention at her company",
+      "Manage symptoms of her autoimmune condition"
+    ],
+    "personality": "An empathetic, organized, and diplomatic professional. She is a natural mediator and is passionate about creating a positive work environment. Her personal health challenges have given her a deep understanding of the importance of employee well-being.",
+    "chronic_condition": "Anxiety",
+    "tech": "Apple Watch"
+  },
+  {
+    "name": "Ademola Adebayo",
+    "age": 51,
+    "gender": "Male",
+    "occupation": "Civil Engineer",
+    "residence": "Singapore",
+    "goals": [
+      "Oversee the construction of a major public infrastructure project",
+      "Lower his blood pressure and improve his cardiovascular fitness"
+    ],
+    "personality": "A practical, detail-oriented, and reliable professional. He is a skilled project manager with a strong sense of responsibility. He is now applying his engineering mindset to systematically improve his health.",
+    "chronic_condition": "High Blood Pressure",
+    "tech": "Apple Watch"
+  },
+  {
+    "name": "Yuki Ito",
+    "age": "34",
+    "gender": "Female",
+    "occupation": "Graphic Designer",
+    "residence": "Singapore",
+    "goals": [
+      "Start her own design agency",
+      "Manage her eczema and identify triggers"
+    ],
+    "personality": "A creative, imaginative, and detail-oriented individual. She has a strong aesthetic sense and is passionate about visual storytelling. She is learning to manage the connection between stress and her skin condition.",
+    "chronic_condition": "Eczema",
+    "tech": "Apple Watch"
+  },
+  {
+    "name": "Wei Li",
+    "age": 47,
+    "gender": "Male",
+    "occupation": "Entrepreneur in the F&B industry",
+    "residence": "Singapore",
+    "goals": [
+      "Expand his restaurant chain to a new country",
+      "Manage his gout and make dietary changes"
+    ],
+    "personality": "A charismatic, ambitious, and resilient businessman. He is a foodie at heart and has a passion for creating unique dining experiences. His health condition has prompted him to explore healthier culinary creations.",
+    "chronic_condition": "High Cholesterol",
+    "tech": "Apple Watch"
+  },
+  {
+    "name": "Ananya Rao",
+    "age": 40,
+    "gender": "Female",
+    "occupation": "Lawyer",
+    "residence": "Singapore",
+    "goals": [
+      "Make partner at her law firm",
+      "Manage irritable bowel syndrome (IBS) and reduce work-related stress"
+    ],
+    "personality": "A sharp, articulate, and tenacious legal professional. She is a formidable opponent in the courtroom and a dedicated advocate for her clients. She is learning to balance her demanding career with the needs of her digestive health.",
+    "chronic_condition": "Irritable Bowel Syndrome (IBS)",
+    "tech": "Oura Ring"
+  },
+  {
+    "name": "Ben Carter",
+    "age": 56,
+    "gender": "Male",
+    "occupation": "Sales Director",
+    "residence": "Singapore",
+    "goals": [
+      "Exceed his annual sales targets",
+      "Improve his sleep apnea and get more restful sleep"
+    ],
+    "personality": "An outgoing, persuasive, and energetic professional. He is a natural networker and a skilled negotiator. He is now focused on improving his sleep quality to maintain his high energy levels.",
+    "chronic_condition": "Sleep Apnea",
+    "tech": "Apple Watch"
+  },
+  {
+    "name": "Chen Rui",
+    "age": "33",
+    "gender": "Female",
+    "occupation": "Research Scientist",
+    "residence": "Singapore",
+    "goals": [
+      "Make a significant discovery in her field of genetics",
+      "Manage her endometriosis and advocate for more research"
+    ],
+    "personality": "A brilliant, inquisitive, and dedicated scientist. She is driven by a desire to understand the world and contribute to scientific knowledge. Her personal health experience has fueled her passion for medical research.",
+    "chronic_condition": "Chronic Migraines",
+    "tech": "Apple Watch"
+  },
+  {
+    "name": "Gabriel Souza",
+    "age": 50,
+    "gender": "Male",
+    "occupation": "Pilot",
+    "residence": "Singapore",
+    "goals": [
+      "Maintain his flight certification for as long as possible",
+      "Keep his Type 1 Diabetes under tight control"
+    ],
+    "personality": "A calm, focused, and highly responsible individual. He has a passion for aviation and a deep respect for safety protocols. He manages his health with the same level of precision and attention to detail that he applies to flying.",
+    "chronic_condition": "Type 1 Diabetes",
+    "tech": "Apple Watch"
+  },
+  {
+    "name": "Olivia Jones",
+    "age": "48",
+    "gender": "Female",
+    "occupation": "Real Estate Developer",
+    "residence": "Singapore",
+    "goals": [
+      "Complete a large-scale sustainable housing project",
+      "Manage her depression and maintain a positive outlook"
+    ],
+    "personality": "A visionary, determined, and resourceful entrepreneur. She has a keen eye for opportunities and a passion for building communities. She is a strong advocate for mental health and has learned to prioritize self-care.",
+    "chronic_condition": "Depression",
+    "tech": "Oura Ring"
+  },
+  {
+    "name": "Jin Park",
+    "age": "37",
+    "gender": "Male",
+    "occupation": "Musician",
+    "residence": "Singapore",
+    "goals": [
+      "Compose and record a new album",
+      "Manage his tinnitus and protect his hearing"
+    ],
+    "personality": "A creative, expressive, and introspective artist. He is passionate about music and is dedicated to his craft. His health condition has made him more mindful of the importance of auditory health for musicians.",
+    "chronic_condition": "Insomnia",
+    "tech": "Oura Ring"
+  },
+  {
+    "name": "Elena Ivanova",
+    "age": 54,
+    "gender": "Female",
+    "occupation": "Translator",
+    "residence": "Singapore",
+    "goals": [
+      "Translate a classic novel into her native language",
+      "Manage her osteoarthritis and stay active"
+    ],
+    "personality": "A meticulous, cultured, and patient individual with a love for languages. She enjoys the quiet, focused nature of her work. She is committed to regular exercise to manage her joint health.",
+    "chronic_condition": "Osteoarthritis",
+    "tech": "Apple Watch"
+  },
+  {
+    "name": "Marcus Williams",
+    "age": "42",
+    "gender": "Male",
+    "occupation": "IT Consultant",
+    "residence": "Singapore",
+    "goals": [
+      "Help a major client with their digital transformation",
+      "Manage his psoriasis and reduce flare-ups"
+    ],
+    "personality": "A logical, analytical, and solutions-oriented professional. He is a skilled problem-solver who enjoys tackling complex technical challenges. He is proactive in managing his skin condition through a combination of lifestyle changes and medical treatment.",
+    "chronic_condition": "Asthma",
+    "tech": "Oura Ring"
+  },
+  {
+    "name": "Amara Diallo",
+    "age": 31,
+    "gender": "Female",
+    "occupation": "Veterinarian",
+    "residence": "Singapore",
+    "goals": [
+      "Open her own animal clinic",
+      "Manage her allergies and asthma triggers in the workplace"
+    ],
+    "personality": "A compassionate, patient, and dedicated animal lover. She is a skilled clinician with a gentle touch. She is diligent about managing her own health to ensure she can provide the best care for her animal patients.",
+    "chronic_condition": "Allergies",
+    "tech": "Oura Ring"
+  },
+  {
+    "name": "Leo Schmidt",
+    "age": 57,
+    "gender": "Male",
+    "occupation": "Accountant",
+    "residence": "Singapore",
+    "goals": [
+      "Help his clients navigate a complex tax season",
+      "Manage his chronic kidney disease and maintain his current level of function"
+    ],
+    "personality": "A methodical, trustworthy, and detail-oriented professional. He is a man of routine and finds satisfaction in order and accuracy. He applies this same meticulous approach to managing his health.",
+    "chronic_condition": "Chronic Kidney Disease",
+    "tech": "Oura Ring"
+  },
+  {
+    "name": "Hana Al-Salem",
+    "age": 45,
+    "gender": "Female",
+    "occupation": "Interior Designer",
+    "residence": "Singapore",
+    "goals": [
+      "Win a prestigious design award",
+      "Manage her vertigo and create a stable, calming home environment"
+    ],
+    "personality": "A creative, intuitive, and aesthetically-minded individual. She has a talent for creating beautiful and functional spaces. Her experience with vertigo has given her a unique appreciation for the importance of balance and harmony in design.",
+    "chronic_condition": "Anxiety",
+    "tech": "Apple Watch"
+  },
+  {
+    "name": "Finn O'Connell",
+    "age": "30",
+    "gender": "Male",
+    "occupation": "Personal Trainer",
+    "residence": "Singapore",
+    "goals": [
+      "Help his clients achieve their fitness goals",
+      "Manage his ulcerative colitis and maintain his own physical fitness"
+    ],
+    "personality": "An energetic, motivating, and empathetic fitness professional. He is passionate about helping others live healthier lives. His own health challenges have given him a deeper understanding of the complexities of health and wellness.",
+    "chronic_condition": "Chronic Back Pain",
+    "tech": "Apple Watch"
+  },
+  {
+    "name": "Jasmine Kaur",
+    "age": 53,
+    "gender": "Female",
+    "occupation": "High School Principal",
+    "residence": "Singapore",
+    "goals": [
+      "Improve graduation rates at her school",
+      "Manage her high blood pressure through lifestyle changes"
+    ],
+    "personality": "A dedicated, inspiring, and resilient leader in education. She is passionate about creating a supportive learning environment for her students. She is now applying her leadership skills to motivating herself to live a healthier lifestyle.",
+    "chronic_condition": "High Blood Pressure",
+    "tech": "Apple Watch"
+  },
+  {
+    "name": "Ravi Kumar",
+    "age": 44,
+    "gender": "Male",
+    "occupation": "Project Manager",
+    "residence": "Singapore",
+    "goals": [
+      "Deliver a major project on time and under budget",
+      "Manage his carpal tunnel syndrome and improve his ergonomic setup"
+    ],
+    "personality": "An organized, efficient, and collaborative professional. He is a skilled planner and a natural leader. He is proactive about his health and is always looking for ways to improve his work environment to support his well-being.",
+    "chronic_condition": "Arthritis",
+    "tech": "Apple Watch"
+  },
+  {
+    "name": "Zara Ali",
+    "age": "39",
+    "gender": "Female",
+    "occupation": "Event Planner",
+    "residence": "Singapore",
+    "goals": [
+      "Organize a major international conference",
+      "Manage her panic attacks and develop coping strategies"
+    ],
+    "personality": "A creative, organized, and resourceful individual who thrives in a fast-paced environment. She is a master of logistics and has a talent for creating memorable experiences. She is also committed to her mental health and has developed effective strategies for managing stress.",
+    "chronic_condition": "Anxiety",
+    "tech": "Oura Ring"
+  },
+  {
+    "name": "Nikolai Volkov",
+    "age": 60,
+    "gender": "Male",
+    "occupation": "Chess Grandmaster and Coach",
+    "residence": "Singapore",
+    "goals": [
+      "Coach a young player to a national championship",
+      "Manage his atrial fibrillation and stay mentally sharp"
+    ],
+    "personality": "A strategic, patient, and intellectually sharp individual. He is a legendary figure in the chess world and is a gifted teacher. He is now applying his strategic thinking to managing his cardiovascular health.",
+    "chronic_condition": "High Blood Pressure",
+    "tech": "Oura Ring"
+  },
+  {
+    "name": "Siti binti Abdullah",
+    "age": "49",
+    "gender": "Female",
+    "occupation": "Social Worker",
+    "residence": "Singapore",
+    "goals": [
+      "Help vulnerable families in her community",
+      "Manage burnout and emotional fatigue from her demanding job"
+    ],
+    "personality": "A compassionate, empathetic, and resilient individual with a strong sense of social justice. She is a dedicated advocate for her clients and is passionate about making a difference. She is learning to prioritize self-care to sustain her in her challenging but rewarding work.",
+    "chronic_condition": "Depression",
+    "tech": "Apple Watch"
+  },
+  {
+    "name": "Antonio Blanco",
+    "age": "55",
+    "gender": "Male",
+    "occupation": "Librarian",
+    "residence": "Singapore",
+    "goals": [
+      "Curate a new collection for the library's digital archive",
+      "Manage his obstructive sleep apnea and improve his daytime energy levels"
+    ],
+    "personality": "A quiet, knowledgeable, and helpful individual with a love for books and learning. He enjoys helping people find the information they need. He is committed to using his CPAP machine to improve his sleep and overall health.",
+    "chronic_condition": "Sleep Apnea",
+    "tech": "Apple Watch"
+  },
+  {
+    "name": "Thalia Papadakis",
+    "age": 47,
+    "gender": "Female",
+    "occupation": "Marine Biologist",
+    "residence": "Singapore",
+    "goals": [
+      "Lead a research expedition to study coral reef health",
+      "Manage her sciatica and stay physically active for fieldwork"
+    ],
+    "personality": "An adventurous, passionate, and dedicated scientist. She is a strong advocate for ocean conservation. She is proactive about managing her back pain to ensure she can continue her important research.",
+    "chronic_condition": "Chronic Back Pain",
+    "tech": "Apple Watch"
+  },
+  {
+    "name": "Kofi Mensah",
+    "age": "43",
+    "gender": "Male",
+    "occupation": "Urban Planner",
+    "residence": "Singapore",
+    "goals": [
+      "Design a more walkable and green city neighborhood",
+      "Manage his seasonal allergies and enjoy the outdoors"
+    ],
+    "personality": "A visionary, collaborative, and community-minded professional. He is passionate about creating sustainable and livable cities. He is proactive in managing his allergies so that he can enjoy the green spaces he helps create.",
+    "chronic_condition": "Allergies",
+    "tech": "Apple Watch"
+  },
+  {
+    "name": "Ji-hyun Moon",
+    "age": 36,
+    "gender": "Female",
+    "occupation": "Pastry Chef",
+    "residence": "Singapore",
+    "goals": [
+      "Perfect a new and innovative dessert recipe",
+      "Manage her celiac disease and create delicious gluten-free pastries"
+    ],
+    "personality": "A creative, precise, and passionate culinary artist. She has a talent for creating beautiful and delicious pastries. Her own dietary restrictions have inspired her to become an expert in gluten-free baking.",
+    "chronic_condition": "Allergies",
+    "tech": "Apple Watch"
+  },
+  {
+    "name": "Andrei Popov",
+    "age": "58",
+    "gender": "Male",
+    "occupation": "History Professor",
+    "residence": "Singapore",
+    "goals": [
+      "Finish writing his latest book on Southeast Asian history",
+      "Manage his peripheral neuropathy and maintain his mobility"
+    ],
+    "personality": "A scholarly, engaging, and thoughtful educator. He is a captivating storyteller with a deep knowledge of his subject. He is committed to staying active to manage his health condition and continue his academic work.",
+    "chronic_condition": "Type 2 Diabetes",
+    "tech": "Apple Watch"
+  },
+  {
+    "name": "Catalina Flores",
+    "age": 41,
+    "gender": "Female",
+    "occupation": "Florist",
+    "residence": "Singapore",
+    "goals": [
+      "Create beautiful floral arrangements for a major event",
+      "Manage her carpal tunnel syndrome from repetitive hand movements"
+    ],
+    "personality": "A creative, warm, and nurturing individual with a love for nature's beauty. She has a talent for creating stunning floral designs. She is proactive about her hand health to ensure she can continue her beloved work.",
+    "chronic_condition": "Arthritis",
+    "tech": "Apple Watch"
+  },
+  {
+    "name": "Samir Gupta",
+    "age": 46,
+    "gender": "Male",
+    "occupation": "Taxi Driver",
+    "residence": "Singapore",
+    "goals": [
+      "Provide for his family and save for his children's education",
+      "Manage his chronic back pain from long hours of sitting"
+    ],
+    "personality": "A hardworking, friendly, and reliable individual. He is a good conversationalist and knows the city like the back of his hand. He is looking for effective ways to manage his back pain and improve his overall health.",
+    "chronic_condition": "Chronic Back Pain",
+    "tech": "Oura Ring"
+  },
+  {
+    "name": "Eva Novak",
+    "age": "50",
+    "gender": "Female",
+    "occupation": "Judge",
+    "residence": "Singapore",
+    "goals": [
+      "Preside over a complex and high-profile case",
+      "Manage her high blood pressure and the stress of her demanding job"
+    ],
+    "personality": "A judicious, analytical, and impartial professional with a strong sense of ethics. She is a respected figure in the legal community. She is committed to a healthy lifestyle to manage the pressures of her career.",
+    "chronic_condition": "High Blood Pressure",
+    "tech": "Apple Watch"
+  },
+  {
+    "name": "Ibrahim Hassan",
+    "age": "39",
+    "gender": "Male",
+    "occupation": "Mechanic",
+    "residence": "Singapore",
+    "goals": [
+      "Be the best mechanic in his neighborhood",
+      "Manage his eczema on his hands from exposure to chemicals"
+    ],
+    "personality": "A practical, skilled, and honest tradesman. He is a problem-solver who takes pride in his work. He is diligent about protecting his skin and managing his eczema.",
+    "chronic_condition": "Eczema",
+    "tech": "Oura Ring"
+  },
+  {
+    "name": "Yara Silva",
+    "age": 48,
+    "gender": "Female",
+    "occupation": "School Counselor",
+    "residence": "Singapore",
+    "goals": [
+      "Help students navigate their academic and personal challenges",
+      "Manage her generalized anxiety disorder and practice mindfulness"
+    ],
+    "personality": "A compassionate, patient, and insightful professional. She is a trusted confidante for many students. She practices the same mental health strategies she teaches her students.",
+    "chronic_condition": "Anxiety",
+    "tech": "Apple Watch"
+  },
+  {
+    "name": "Oliver Nguyen",
+    "age": 42,
+    "gender": "Male",
+    "occupation": "Pharmacist",
+    "residence": "Singapore",
+    "goals": [
+      "Provide excellent care and advice to his customers",
+      "Manage his acid reflux and maintain a healthy diet"
+    ],
+    "personality": "A meticulous, knowledgeable, and caring healthcare professional. He is a trusted source of information for his community. He applies his knowledge of health to manage his own digestive issues.",
+    "chronic_condition": "Acid Reflux",
+    "tech": "Oura Ring"
+  },
+  {
+    "name": "Isla McGregor",
+    "age": "37",
+    "gender": "Female",
+    "occupation": "Freelance Writer",
+    "residence": "Singapore",
+    "goals": [
+      "Write a novel",
+      "Manage her chronic migraines and create a flexible work schedule"
+    ],
+    "personality": "A creative, disciplined, and introspective individual. She is a gifted writer with a passion for storytelling. Her freelance career allows her the flexibility to manage her health condition.",
+    "chronic_condition": "Chronic Migraines",
+    "tech": "Oura Ring"
+  },
+  {
+    "name": "Santiago Morales",
+    "age": 51,
+    "gender": "Male",
+    "occupation": "Construction Manager",
+    "residence": "Singapore",
+    "goals": [
+      "Ensure the safety and timely completion of his construction projects",
+      "Manage his hearing loss from years of working in a noisy environment"
+    ],
+    "personality": "A practical, decisive, and safety-conscious leader. He is a respected figure on the construction site. He is an advocate for hearing protection in his industry.",
+    "chronic_condition": "High Blood Pressure",
+    "tech": "Oura Ring"
+  }
+]
