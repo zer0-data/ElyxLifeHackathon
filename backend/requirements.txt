@@ -1,5 +1,9 @@
+# Requirements for the backend FastAPI application
+# Used by the scripts in the 'backend' directory
+
 fastapi
 uvicorn
 pydantic
 pandas
-scikit-learn  # For a simple vectorizer in retrieval_service
+scikit-learn
+openai  # Added for the external LLM API call
