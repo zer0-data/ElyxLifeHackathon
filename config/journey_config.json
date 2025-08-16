@@ -1,0 +1,9 @@
+{
+  "1": {"events": ["onboarding", "baseline_panel", "plan_setup"]},
+  "2": {"events": ["travel", "adherence_issue", "nutrition_tweak"]},
+  "3": {"events": ["quarterly_panel", "plan_update"]},
+  "4": {"events": ["exercise_update", "travel"]},
+  "5": {"events": ["wearable_improvement", "pt_progression"]},
+  "6": {"events": ["quarterly_panel", "advanced_cardio_test"]},
+  "7": {"events": ["travel", "jetlag_protocol"]},
+  "8": {"events": ["quarterly_panel", "final_review"]}}
