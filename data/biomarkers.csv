@@ -1,0 +1,30 @@
+month,date,marker_name,value,unit,notes
+1,2025-09-16,ApoB,125,mg/dL,"Slightly elevated, a key focus for intervention."
+1,2025-09-16,Lp(a),45,nmol/L,Within normal range.
+1,2025-09-16,hs-CRP,1.8,mg/L,"Indicates low-grade inflammation."
+1,2025-09-16,VO2 Max,38,mL/kg/min,"Average for his age, room for improvement."
+1,2025-09-16,Sleep Quality (Garmin),72,Score,"Inconsistent, with frequent wake-ups."
+2,2025-10-17,ApoB,122,mg/dL,"Slight decrease with initial dietary changes."
+2,2025-10-17,hs-CRP,1.6,mg/L,Slight improvement.
+2,2025-10-17,Sleep Quality (Garmin),75,Score,Showing gradual improvement.
+3,2025-11-02,ApoB,120,mg/dL,Slow but steady decrease.
+3,2025-11-02,Lp(a),44,nmol/L,Stable.
+3,2025-11-02,hs-CRP,1.5,mg/L,Continued improvement.
+3,2025-11-02,VO2 Max,39,mL/kg/min,Slight increase.
+4,2025-12-02,ApoB,115,mg/dL,"Improved adherence leading to a better result."
+4,2025-12-02,hs-CRP,1.3,mg/L,Steady decline.
+4,2025-12-02,Cognitive Assessment Score,85,Score,Baseline measurement.
+5,2026-01-02,ApoB,105,mg/dL,Significant improvement.
+5,2026-01-02,hs-CRP,1.1,mg/L,"Approaching optimal levels."
+5,2026-01-02,Cognitive Assessment Score,90,Score,Noticeable improvement.
+5,2026-01-02,VO2 Max,41,mL/kg/min,Continued positive trend.
+6,2026-02-01,ApoB,98,mg/dL,"Now in the optimal range."
+6,2026-02-01,Lp(a),42,nmol/L,Stable.
+6,2026-02-01,hs-CRP,0.9,mg/L,Optimal.
+7,2026-03-02,ApoB,95,mg/dL,"Maintaining optimal levels."
+7,2026-03-02,hs-CRP,0.8,mg/L,"Stable and optimal."
+7,2026-03-02,HRV,55,ms,"Baseline measurement for optimization."
+8,2026-04-01,ApoB,94,mg/dL,"Sustained optimal level."
+8,2026-04-01,hs-CRP,0.7,mg/L,"Consistently optimal."
+8,2026-04-01,Cognitive Assessment Score,92,Score,Peak performance.
+8,2026-04-01,VO2 Max,43,mL/kg/min,Significant improvement.
