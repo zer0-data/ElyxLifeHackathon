@@ -1,0 +1,76 @@
+{
+  "internal_metrics": [
+    {
+      "month": 1,
+      "period": "September 2025",
+      "doctor_consults_hours": 2,
+      "coach_hours": 3,
+      "plan_adherence_percentage": null,
+      "member_initiated_conversations": 3,
+      "notes": "Initial onboarding month. Hours reflect setup and initial consultations. Adherence is not yet applicable."
+    },
+    {
+      "month": 2,
+      "period": "October 2025",
+      "doctor_consults_hours": 1,
+      "coach_hours": 4,
+      "plan_adherence_percentage": 60,
+      "member_initiated_conversations": 5,
+      "notes": "First full month of plan implementation. Coaching hours increased for support during travel. Adherence impacted by business trip."
+    },
+    {
+      "month": 3,
+      "period": "November 2025",
+      "doctor_consults_hours": 1.5,
+      "coach_hours": 4,
+      "plan_adherence_percentage": 50,
+      "member_initiated_conversations": 4,
+      "notes": "Adherence dipped due to travel and plan complexity, prompting a strategy review. Doctor hours include test result analysis."
+    },
+    {
+      "month": 4,
+      "period": "December 2025",
+      "doctor_consults_hours": 1,
+      "coach_hours": 4,
+      "plan_adherence_percentage": 65,
+      "member_initiated_conversations": 3,
+      "notes": "Increased adherence following a check-in from senior leadership and plan adjustments. Introduction of supplements."
+    },
+    {
+      "month": 5,
+      "period": "January 2026",
+      "doctor_consults_hours": 1,
+      "coach_hours": 4,
+      "plan_adherence_percentage": 75,
+      "member_initiated_conversations": 4,
+      "notes": "Significant improvement in adherence, motivated by positive and tangible biomarker results. Member engagement is high."
+    },
+    {
+      "month": 6,
+      "period": "February 2026",
+      "doctor_consults_hours": 2,
+      "coach_hours": 4,
+      "plan_adherence_percentage": 80,
+      "member_initiated_conversations": 5,
+      "notes": "Focus on long-term planning. Doctor hours reflect comprehensive review and discussion of future health strategy."
+    },
+    {
+      "month": 7,
+      "period": "March 2026",
+      "doctor_consults_hours": 1.5,
+      "coach_hours": 4,
+      "plan_adherence_percentage": 85,
+      "member_initiated_conversations": 4,
+      "notes": "High and stable adherence. Member is proactively inquiring about advanced health topics, increasing engagement."
+    },
+    {
+      "month": 8,
+      "period": "April 2026",
+      "doctor_consults_hours": 1,
+      "coach_hours": 2,
+      "plan_adherence_percentage": 90,
+      "member_initiated_conversations": 3,
+      "notes": "Transition to self-management. Coaching hours are reduced as member demonstrates independence. Final review and transition call."
+    }
+  ]
+}
