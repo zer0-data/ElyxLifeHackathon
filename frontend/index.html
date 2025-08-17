@@ -1,120 +1,219 @@
-<!-- frontend/index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elyx Health Journey</title>
-    <!-- Tailwind CSS CDN -->
+    <title>Elyx Health Dashboard</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                }
-            }
-        }
-    </script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/date-fns@2.29.3/index.min.js"></script>
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
+        .tab-content {
+            display: none;
         }
-        /* Custom scrollbar for better aesthetics */
-        ::-webkit-scrollbar {
-            width: 8px;
+        .tab-content.active {
+            display: block;
         }
-        ::-webkit-scrollbar-track {
-            background: #f1f1f1;
-            border-radius: 10px;
+        .tab-button {
+            transition: all 0.3s ease;
         }
-        ::-webkit-scrollbar-thumb {
-            background: #888;
-            border-radius: 10px;
+        .tab-button.active {
+            background-color: #3b82f6;
+            color: white;
         }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #555;
+        .loading {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #3498db;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .member-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .member-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        .metric-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        .metric-card:hover {
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
         }
     </style>
 </head>
-<body class="bg-gray-100 min-h-screen flex flex-col">
-
-    <header class="bg-gradient-to-r from-blue-600 to-purple-700 text-white p-4 shadow-lg rounded-b-lg">
-        <div class="container mx-auto flex justify-between items-center">
-            <h1 class="text-3xl font-bold tracking-tight">Elyx Health Journey Dashboard</h1>
-            <nav>
-                <button id="showInternalMetricsBtn" class="bg-white text-blue-700 px-4 py-2 rounded-full shadow-md hover:bg-gray-100 transition duration-300">
-                    Internal Metrics
-                </button>
-            </nav>
+<body class="bg-gray-100 min-h-screen">
+    <!-- Header -->
+    <header class="bg-white shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-6">
+                <div class="flex items-center">
+                    <h1 class="text-3xl font-bold text-gray-900">Elyx Health Dashboard</h1>
+                </div>
+                <div class="text-sm text-gray-500">
+                    Last updated: <span id="lastUpdated"></span>
+                </div>
+            </div>
         </div>
     </header>
 
-    <main class="container mx-auto flex-1 p-4 flex flex-col lg:flex-row gap-6 mt-4">
-        <!-- Sidebar for Member List -->
-        <aside class="w-full lg:w-1/4 bg-white p-4 rounded-lg shadow-md overflow-y-auto max-h-[calc(100vh-120px)]">
-            <h2 class="text-xl font-semibold text-gray-800 mb-4 pb-2 border-b border-gray-200">Members</h2>
-            <div id="memberList" class="space-y-3">
-                <!-- Member cards will be loaded here by JavaScript -->
-                <p class="text-gray-500">Loading members...</p>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- Member Selection Section -->
+        <div id="memberSelection" class="mb-8">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">Select Member</h2>
+            <div id="memberCard" class="max-w-md cursor-pointer">
+                <div class="loading"></div>
             </div>
-        </aside>
+        </div>
 
-        <!-- Main Content Area -->
-        <section class="w-full lg:w-3/4 bg-white p-6 rounded-lg shadow-md flex flex-col">
-            <div id="memberDashboard" class="hidden flex-1 flex flex-col">
-                <h2 id="memberName" class="text-2xl font-bold text-gray-800 mb-4 pb-2 border-b border-gray-200">Select a Member to View Their Journey</h2>
-                
-                <!-- Tabs for different views -->
-                <div class="flex border-b border-gray-200 mb-4">
-                    <button id="tabChats" class="px-4 py-2 text-lg font-medium text-blue-600 border-b-2 border-blue-600 focus:outline-none">Chats</button>
-                    <button id="tabBiomarkers" class="px-4 py-2 text-lg font-medium text-gray-600 hover:text-blue-600 hover:border-blue-600 focus:outline-none">Biomarkers</button>
-                    <button id="tabWhyAgent" class="px-4 py-2 text-lg font-medium text-gray-600 hover:text-blue-600 hover:border-blue-600 focus:outline-none">Why Agent</button>
-                </div>
+        <!-- Main Dashboard (Hidden initially) -->
+        <div id="mainDashboard" class="hidden">
+            <!-- Member Info Banner -->
+            <div id="memberInfo" class="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-6 rounded-lg mb-8">
+                <!-- Will be populated dynamically -->
+            </div>
 
-                <!-- Content areas for tabs -->
-                <div id="chatsContent" class="tab-content flex-1 overflow-y-auto space-y-4 p-2 bg-gray-50 rounded-lg shadow-inner max-h-[60vh]">
-                    <!-- Chat messages will be loaded here -->
-                    <p class="text-gray-500 text-center py-8">No chats loaded. Select a member.</p>
-                </div>
+            <!-- Tab Navigation -->
+            <div class="mb-8">
+                <nav class="flex space-x-1 bg-gray-200 p-1 rounded-lg">
+                    <button class="tab-button px-6 py-3 rounded-md font-medium active" data-tab="chats">
+                        Chat History
+                    </button>
+                    <button class="tab-button px-6 py-3 rounded-md font-medium" data-tab="biomarkers">
+                        Biomarker Trends
+                    </button>
+                    <button class="tab-button px-6 py-3 rounded-md font-medium" data-tab="reports">
+                        Monthly Reports
+                    </button>
+                    <button class="tab-button px-6 py-3 rounded-md font-medium" data-tab="wearables">
+                        Wearables Data
+                    </button>
+                    <button class="tab-button px-6 py-3 rounded-md font-medium" data-tab="diagnostics">
+                        Diagnostic Plans
+                    </button>
+                    <button class="tab-button px-6 py-3 rounded-md font-medium" data-tab="ai-chat">
+                        AI Assistant
+                    </button>
+                </nav>
+            </div>
 
-                <div id="biomarkersContent" class="tab-content hidden flex-1 overflow-y-auto p-4 bg-gray-50 rounded-lg shadow-inner max-h-[60vh]">
-                    <h3 class="text-xl font-semibold mb-4">Biomarker Trends</h3>
-                    <div id="biomarkerCharts" class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <!-- Biomarker charts will be loaded here -->
-                        <p class="text-gray-500 text-center py-8">Select a biomarker to view its trend.</p>
+            <!-- Tab Contents -->
+            
+            <!-- Chat History Tab -->
+            <div id="chats" class="tab-content active">
+                <div class="bg-white rounded-lg shadow">
+                    <div class="p-6 border-b border-gray-200">
+                        <h3 class="text-lg font-semibold text-gray-900">Communication History</h3>
                     </div>
-                </div>
-
-                <div id="whyAgentContent" class="tab-content hidden flex-1 p-4 bg-gray-50 rounded-lg shadow-inner max-h-[60vh]">
-                    <h3 class="text-xl font-semibold mb-4">Ask the Why Agent</h3>
-                    <div id="whyAgentContainer">
-                        <!-- Why Agent interface will be loaded here -->
-                    </div>
-                </div>
-            </div>
-
-            <!-- Initial welcome message -->
-            <div id="welcomeMessage" class="flex-1 flex items-center justify-center text-gray-600 text-xl font-medium">
-                <p>Welcome to the Elyx Health Journey Dashboard. Please select a member from the left sidebar to view their progress.</p>
-            </div>
-
-            <!-- Internal Metrics Modal -->
-            <div id="internalMetricsModal" class="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center p-4 z-50 hidden">
-                <div class="bg-white p-8 rounded-lg shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto relative">
-                    <button id="closeInternalMetricsModal" class="absolute top-4 right-4 text-gray-500 hover:text-gray-800 text-2xl">&times;</button>
-                    <h2 class="text-2xl font-bold text-gray-800 mb-6 pb-2 border-b border-gray-200">Elyx Team Internal Metrics</h2>
-                    <div id="internalMetricsContent">
-                        <p class="text-gray-500">Loading internal metrics...</p>
+                    <div id="chatContainer" class="p-6 max-h-96 overflow-y-auto">
+                        <div class="loading"></div>
                     </div>
                 </div>
             </div>
-        </section>
-    </main>
 
-    <script type="module" src="./src/main.js"></script>
+            <!-- Biomarkers Tab -->
+            <div id="biomarkers" class="tab-content">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    <div class="bg-white rounded-lg shadow p-6">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-4">Biomarker Trends</h3>
+                        <canvas id="biomarkerChart" height="300"></canvas>
+                    </div>
+                    <div class="bg-white rounded-lg shadow p-6">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-4">Latest Values</h3>
+                        <div id="latestBiomarkers"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reports Tab -->
+            <div id="reports" class="tab-content">
+                <div class="bg-white rounded-lg shadow">
+                    <div class="p-6 border-b border-gray-200">
+                        <h3 class="text-lg font-semibold text-gray-900">Monthly Test Reports</h3>
+                    </div>
+                    <div id="reportsContainer" class="p-6">
+                        <div class="loading"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Wearables Tab -->
+            <div id="wearables" class="tab-content">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    <div class="bg-white rounded-lg shadow p-6">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-4">Wearables Trends</h3>
+                        <canvas id="wearablesChart" height="300"></canvas>
+                    </div>
+                    <div class="bg-white rounded-lg shadow p-6">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-4">Recent Metrics</h3>
+                        <div id="recentWearables"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Diagnostics Tab -->
+            <div id="diagnostics" class="tab-content">
+                <div class="bg-white rounded-lg shadow">
+                    <div class="p-6 border-b border-gray-200">
+                        <h3 class="text-lg font-semibold text-gray-900">Diagnostic Plans</h3>
+                    </div>
+                    <div id="diagnosticsContainer" class="p-6">
+                        <div class="loading"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AI Chat Tab -->
+            <div id="ai-chat" class="tab-content">
+                <div class="bg-white rounded-lg shadow">
+                    <div class="p-6 border-b border-gray-200">
+                        <h3 class="text-lg font-semibold text-gray-900">AI Health Assistant</h3>
+                        <p class="text-sm text-gray-600 mt-1">Ask questions about Rohan's health journey, chat history, and persona evolution.</p>
+                    </div>
+                    <div class="p-6">
+                        <div id="aiChatHistory" class="mb-4 max-h-96 overflow-y-auto border rounded-lg p-4 bg-gray-50">
+                            <div class="text-gray-500 text-center">Start a conversation by asking a question below...</div>
+                        </div>
+                        <div class="flex gap-2">
+                            <input type="text" id="aiChatInput" placeholder="Ask about Rohan's health journey..." 
+                                   class="flex-1 border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <button id="aiChatSend" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                Send
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Internal Metrics Section -->
+            <div class="mt-8">
+                <div class="bg-white rounded-lg shadow">
+                    <div class="p-6 border-b border-gray-200">
+                        <h3 class="text-lg font-semibold text-gray-900">Internal Metrics</h3>
+                        <p class="text-sm text-gray-600 mt-1">Service utilization and engagement metrics</p>
+                    </div>
+                    <div id="internalMetricsContainer" class="p-6">
+                        <div class="loading"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/charts.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
