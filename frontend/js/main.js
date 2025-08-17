@@ -203,20 +203,46 @@ class App {
             let biomarkerData = this.data.biomarkers;
             if (!biomarkerData) {
                 Components.showLoading('latestBiomarkers');
+                console.log('Fetching biomarkers data from API...');
                 biomarkerData = await API.getMemberBiomarkers();
+                console.log('Biomarkers data received:', biomarkerData);
                 this.data.biomarkers = biomarkerData;
             }
 
             // Render latest biomarkers
             const latestContainer = document.getElementById('latestBiomarkers');
-            if (biomarkerData.grouped_data) {
+            if (biomarkerData && biomarkerData.grouped_data) {
+                console.log('Processing biomarkers data, markers available:', Object.keys(biomarkerData.grouped_data));
+                
+                // First, just show the data without charts
                 latestContainer.innerHTML = Object.keys(biomarkerData.grouped_data)
                     .map(marker => Components.createBiomarkerCard(marker, biomarkerData.grouped_data[marker]))
                     .join('');
 
-                // Create chart
-                Charts.createBiomarkerChart(biomarkerData);
+                console.log('Biomarker cards created successfully');
+
+                // Try to create charts with error handling
+                try {
+                    if (typeof Chart !== 'undefined') {
+                        console.log('Chart.js is available, creating charts...');
+                        Charts.createBiomarkerCharts(biomarkerData);
+                    } else {
+                        console.error('Chart.js is not loaded - charts will not be displayed');
+                        // Add a message to the charts container
+                        const chartsContainer = document.getElementById('biomarkerChartsContainer');
+                        if (chartsContainer) {
+                            chartsContainer.innerHTML = '<p class="text-orange-500 text-center p-4">Charts unavailable - Chart.js library not loaded</p>';
+                        }
+                    }
+                } catch (chartError) {
+                    console.error('Chart creation failed:', chartError);
+                    const chartsContainer = document.getElementById('biomarkerChartsContainer');
+                    if (chartsContainer) {
+                        chartsContainer.innerHTML = '<p class="text-red-500 text-center p-4">Chart creation failed: ' + chartError.message + '</p>';
+                    }
+                }
             } else {
+                console.log('No grouped biomarker data available');
                 latestContainer.innerHTML = '<p class="text-gray-500">No biomarker data available</p>';
             }
         } catch (error) {
@@ -230,24 +256,99 @@ class App {
             let wearableData = this.data.wearables;
             if (!wearableData) {
                 Components.showLoading('recentWearables');
+                console.log('Fetching wearables data from API...');
                 wearableData = await API.getMemberWearables();
+                console.log('Wearables data received:', wearableData);
                 this.data.wearables = wearableData;
             }
 
             // Render recent wearables
             const recentContainer = document.getElementById('recentWearables');
             if (wearableData && wearableData.length > 0) {
-                const latest = wearableData[wearableData.length - 1];
-                const previous = wearableData.length > 1 ? wearableData[wearableData.length - 2] : null;
+                console.log('Processing wearables data, total records:', wearableData.length);
+                
+                // Helper function to check if a value is valid (not null, undefined, NaN, or 'N/A')
+                const isValidValue = (value) => {
+                    return value !== null && 
+                           value !== undefined && 
+                           value !== 'N/A' && 
+                           value !== '' && 
+                           !Number.isNaN(Number(value));
+                };
+
+                // Filter out entries with all invalid values and get the most recent valid data
+                const validEntries = wearableData.filter(d => 
+                    isValidValue(d.sleep_score_100) ||
+                    isValidValue(d.hrv_ms) ||
+                    isValidValue(d.rhr_bpm) ||
+                    isValidValue(d.respiratory_rate_brpm) ||
+                    isValidValue(d.recovery_score_pct)
+                );
+
+                console.log('Valid entries found:', validEntries.length);
+
+                let latest, previous;
+                if (validEntries.length > 0) {
+                    latest = validEntries[validEntries.length - 1];
+                    previous = validEntries.length > 1 ? validEntries[validEntries.length - 2] : null;
+                } else {
+                    latest = wearableData[wearableData.length - 1];
+                    previous = wearableData.length > 1 ? wearableData[wearableData.length - 2] : null;
+                }
+
+                console.log('Latest entry:', latest);
+                console.log('Previous entry:', previous);
+
+                const calculateTrend = (current, prev) => {
+                    if (!previous || !isValidValue(current) || !isValidValue(prev)) return 0;
+                    return parseFloat(current) - parseFloat(prev);
+                };
+
+                const formatValue = (value) => {
+                    if (!isValidValue(value)) return 'N/A';
+                    return Number(value).toFixed(1);
+                };
 
                 recentContainer.innerHTML = [
-                    { label: 'Sleep Score', value: latest.sleep_score_100, unit: '/100', trend: previous ? latest.sleep_score_100 - previous.sleep_score_100 : 0 },
-                    { label: 'HRV', value: latest.hrv_ms, unit: 'ms', trend: previous ? latest.hrv_ms - previous.hrv_ms : 0 },
-                    { label: 'Resting HR', value: latest.rhr_bpm, unit: 'bpm', trend: previous ? previous.rhr_bpm - latest.rhr_bpm : 0 },
-                    { label: 'Respiratory Rate', value: latest.respiratory_rate_brpm, unit: 'brpm', trend: 0 }
+                    { 
+                        label: 'Sleep Score', 
+                        value: formatValue(latest.sleep_score_100), 
+                        unit: '/100', 
+                        trend: calculateTrend(latest.sleep_score_100, previous?.sleep_score_100) 
+                    },
+                    { 
+                        label: 'HRV', 
+                        value: formatValue(latest.hrv_ms), 
+                        unit: 'ms', 
+                        trend: calculateTrend(latest.hrv_ms, previous?.hrv_ms) 
+                    },
+                    { 
+                        label: 'Resting HR', 
+                        value: formatValue(latest.rhr_bpm), 
+                        unit: 'bpm', 
+                        trend: previous ? -calculateTrend(latest.rhr_bpm, previous.rhr_bpm) : 0 // Lower RHR is better
+                    },
+                    { 
+                        label: 'Respiratory Rate', 
+                        value: formatValue(latest.respiratory_rate_brpm), 
+                        unit: 'brpm', 
+                        trend: 0 
+                    },
+                    { 
+                        label: 'Recovery Score', 
+                        value: formatValue(latest.recovery_score_pct), 
+                        unit: '%', 
+                        trend: calculateTrend(latest.recovery_score_pct, previous?.recovery_score_pct) 
+                    },
+                    { 
+                        label: 'Device', 
+                        value: latest.device || 'Unknown', 
+                        unit: '', 
+                        trend: 0 
+                    }
                 ].map(metric => Components.createWearableMetric(metric.label, metric.value, metric.unit, metric.trend)).join('');
 
-                // Create chart
+                // Create chart with filtered data
                 Charts.createWearablesChart(wearableData);
             } else {
                 recentContainer.innerHTML = '<p class="text-gray-500">No wearables data available</p>';
