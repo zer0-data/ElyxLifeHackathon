@@ -1,9 +1,6 @@
-# Requirements for the backend FastAPI application
-# Used by the scripts in the 'backend' directory
-
-fastapi
-uvicorn
-pydantic
-pandas
-scikit-learn
-openai  # Added for the external LLM API call
+Flask==2.3.3
+Flask-CORS==4.0.0
+pandas==2.1.4
+numpy==1.26.4
+python-dotenv==1.0.0
+openai==0.28.1

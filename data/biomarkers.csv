@@ -3,28 +3,55 @@ month,date,marker_name,value,unit,notes
 1,2025-09-16,Lp(a),45,nmol/L,Within normal range.
 1,2025-09-16,hs-CRP,1.8,mg/L,"Indicates low-grade inflammation."
 1,2025-09-16,VO2 Max,38,mL/kg/min,"Average for his age, room for improvement."
-1,2025-09-16,Sleep Quality (Garmin),72,Score,"Inconsistent, with frequent wake-ups."
+1,2025-09-16,Sleep Score,72,Score,"Inconsistent, with frequent wake-ups."
+1,2025-09-16,Cognitive Assessment Score,85,Score,"Implied baseline before formal testing."
+1,2025-09-16,HRV,41,ms,"Estimated baseline based on initial Garmin data."
 2,2025-10-17,ApoB,122,mg/dL,"Slight decrease with initial dietary changes."
+2,2025-10-17,Lp(a),45,nmol/L,Remains stable.
 2,2025-10-17,hs-CRP,1.6,mg/L,Slight improvement.
-2,2025-10-17,Sleep Quality (Garmin),75,Score,Showing gradual improvement.
+2,2025-10-17,VO2 Max,38.5,mL/kg/min,Marginal improvement with new HIIT workouts.
+2,2025-10-17,Sleep Score,75,Score,Showing gradual improvement.
+2,2025-10-17,Cognitive Assessment Score,85,Score,Stable.
+2,2025-10-17,HRV,44,ms,Improvement reflects better sleep hygiene.
 3,2025-11-02,ApoB,120,mg/dL,Slow but steady decrease.
 3,2025-11-02,Lp(a),44,nmol/L,Stable.
 3,2025-11-02,hs-CRP,1.5,mg/L,Continued improvement.
 3,2025-11-02,VO2 Max,39,mL/kg/min,Slight increase.
+3,2025-11-02,Sleep Score,76,Score,Stabilizing.
+3,2025-11-02,Cognitive Assessment Score,85,Score,Stable.
+3,2025-11-02,HRV,46,ms,Continued improvement with stress management.
 4,2025-12-02,ApoB,115,mg/dL,"Improved adherence leading to a better result."
+4,2025-12-02,Lp(a),44,nmol/L,Remains stable.
 4,2025-12-02,hs-CRP,1.3,mg/L,Steady decline.
-4,2025-12-02,Cognitive Assessment Score,85,Score,Baseline measurement.
+4,2025-12-02,VO2 Max,40,mL/kg/min,Consistent training paying off.
+4,2025-12-02,Sleep Score,80,Score,"Supplements and consistency showing clear benefits."
+4,2025-12-02,Cognitive Assessment Score,85,Score,Baseline measurement taken this month.
+4,2025-12-02,HRV,49,ms,"Positive trend continues, better recovery."
 5,2026-01-02,ApoB,105,mg/dL,Significant improvement.
+5,2026-01-02,Lp(a),43,nmol/L,Stable.
 5,2026-01-02,hs-CRP,1.1,mg/L,"Approaching optimal levels."
-5,2026-01-02,Cognitive Assessment Score,90,Score,Noticeable improvement.
 5,2026-01-02,VO2 Max,41,mL/kg/min,Continued positive trend.
+5,2026-01-02,Sleep Score,84,Score,"High quality, consistent sleep."
+5,2026-01-02,Cognitive Assessment Score,90,Score,Noticeable improvement.
+5,2026-01-02,HRV,52,ms,"Reflects strong cardiovascular and nervous system health."
 6,2026-02-01,ApoB,98,mg/dL,"Now in the optimal range."
 6,2026-02-01,Lp(a),42,nmol/L,Stable.
 6,2026-02-01,hs-CRP,0.9,mg/L,Optimal.
+6,2026-02-01,VO2 Max,41.5,mL/kg/min,Maintaining high level of fitness.
+6,2026-02-01,Sleep Score,86,Score,Consistently high.
+6,2026-02-01,Cognitive Assessment Score,91,Score,Continued improvement.
+6,2026-02-01,HRV,54,ms,"Nearing baseline for optimization phase."
 7,2026-03-02,ApoB,95,mg/dL,"Maintaining optimal levels."
+7,2026-03-02,Lp(a),42,nmol/L,Remains stable.
 7,2026-03-02,hs-CRP,0.8,mg/L,"Stable and optimal."
+7,2026-03-02,VO2 Max,42,mL/kg/min,Further slight increase with peak training.
+7,2026-03-02,Sleep Score,88,Score,Optimized.
+7,2026-03-02,Cognitive Assessment Score,91.5,Score,Stable at a high level.
 7,2026-03-02,HRV,55,ms,"Baseline measurement for optimization."
 8,2026-04-01,ApoB,94,mg/dL,"Sustained optimal level."
+8,2026-04-01,Lp(a),42,nmol/L,Stable.
 8,2026-04-01,hs-CRP,0.7,mg/L,"Consistently optimal."
-8,2026-04-01,Cognitive Assessment Score,92,Score,Peak performance.
 8,2026-04-01,VO2 Max,43,mL/kg/min,Significant improvement.
+8,2026-04-01,Sleep Score,89,Score,"Consistently optimized sleep."
+8,2026-04-01,Cognitive Assessment Score,92,Score,Peak performance.
+8,2026-04-01,HRV,58,ms,"Showing positive results from HRV optimization focus."
