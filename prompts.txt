@@ -1,0 +1,10 @@
+# Prompts used for generating conversational data in the simulation
+
+## Prompt from scripts/generate_chats.py
+
+This prompt is a template used to generate realistic, personalized conversations between a member and a specific expert from the Elyx team. It provides the LLM with all the necessary context to create a believable dialogue.
+
+"Generate a brief, realistic WhatsApp-style conversation for {member['name']}. Format as: 'Sender: Message'. Use the full name. Member Persona: {member['name']}, {member['age']}, {member['occupation']} from {member['residence']}. Chronic Condition: {member['chronic_condition']}. Today's Context: {context_str}. The initial query is handled by {expert_name}. Your task is to generate a conversation where {expert_name} speaks with the voice: '{expert_info['voice']}' and {member['name']} responds naturally. Ensure the conversation has at least 2 messages and flows realistically."
+
+---
+Note: The variables in curly braces (e.g., {member['name']}) are placeholders that are programmatically replaced with actual data during script execution.
