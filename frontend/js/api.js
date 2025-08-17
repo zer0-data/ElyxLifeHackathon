@@ -16,11 +16,23 @@ class API {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
 
-            return await response.json();
+            const textResponse = await response.text();
+            
+            // Check for invalid JSON (like NaN values)
+            if (textResponse.includes('NaN')) {
+                console.warn('Response contains NaN values, attempting to clean...');
+                const cleanedResponse = textResponse.replace(/:\s*NaN\s*,/g, ': null,').replace(/:\s*NaN\s*}/g, ': null}');
+                return JSON.parse(cleanedResponse);
+            }
+            
+            return JSON.parse(textResponse);
         } catch (error) {
             console.error(`API request failed for ${endpoint}:`, error);
             if (error.message.includes('fetch')) {
                 throw new Error('Backend server not available. Please start the Flask backend on http://localhost:5000');
+            }
+            if (error.message.includes('JSON')) {
+                throw new Error('Invalid data format received from server. Please check server logs.');
             }
             throw error;
         }
