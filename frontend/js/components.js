@@ -3,24 +3,12 @@ class Components {
     static createMemberCard(member) {
         return `
             <div class="member-card p-6 rounded-lg text-white shadow-lg">
-                <div class="flex items-center justify-between">
-                    <div>
-                        <h3 class="text-xl font-bold">${member.name}</h3>
-                        <p class="text-blue-100 mt-1">${member.age} years old • ${member.gender}</p>
-                        <p class="text-blue-100 text-sm mt-2">${member.occupation}</p>
-                        <p class="text-blue-100 text-sm">${member.residence}</p>
-                    </div>
-                    <div class="text-right">
-                        <div class="bg-white bg-opacity-20 rounded-lg p-3">
-                            <p class="text-sm font-medium">Chronic Condition</p>
-                            <p class="text-lg font-bold">${member.chronic_condition}</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="mt-4">
-                    <p class="text-sm font-medium mb-2">Health Goals:</p>
-                    <div class="text-sm text-blue-100">
-                        ${member.goals.map(goal => `<p class="mb-1">• ${goal}</p>`).join('')}
+                <div class="text-center">
+                    <h3 class="text-2xl font-bold mb-2">${member.name}</h3>
+                    <p class="text-blue-100 text-lg mb-2">${member.age} years old</p>
+                    <div class="bg-white bg-opacity-20 rounded-lg p-3 mt-4">
+                        <p class="text-sm font-medium">Chronic Condition</p>
+                        <p class="text-lg font-bold">${member.chronic_condition}</p>
                     </div>
                 </div>
             </div>
@@ -72,17 +60,20 @@ class Components {
         const trendIcon = trend > 0 ? '↗' : trend < 0 ? '↘' : '→';
         const trendColor = trend > 0 ? 'text-green-500' : trend < 0 ? 'text-red-500' : 'text-gray-400';
         
+        // Handle N/A values and empty strings
+        const displayValue = (value === null || value === undefined || value === 'N/A' || value === '') ? 'N/A' : value;
+        
         return `
             <div class="metric-card p-4 mb-4">
                 <div class="flex justify-between items-center">
                     <div>
                         <h4 class="font-medium text-gray-700">${label}</h4>
                         <p class="text-xl font-bold text-gray-900">
-                            ${value !== null && value !== undefined ? value : 'N/A'} ${unit || ''}
+                            ${displayValue} ${displayValue !== 'N/A' && unit ? unit : ''}
                         </p>
                     </div>
                     <div class="text-xl ${trendColor}">
-                        ${trendIcon}
+                        ${displayValue !== 'N/A' ? trendIcon : ''}
                     </div>
                 </div>
             </div>
@@ -94,16 +85,24 @@ class Components {
             <div class="metric-card p-6 mb-6">
                 <div class="border-b border-gray-200 pb-4 mb-4">
                     <h3 class="text-lg font-semibold text-gray-900">Month ${report.month}: ${report.title}</h3>
+                    ${report.notes ? `<p class="text-sm text-gray-600 mt-2">${report.notes}</p>` : ''}
                 </div>
-                <div class="space-y-4">
+                <div class="space-y-6">
                     ${report.panels.map(panel => `
                         <div>
-                            <h4 class="font-medium text-gray-700 mb-2">${panel.name}</h4>
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+                            <h4 class="font-medium text-gray-700 mb-3 text-base">${panel.name}</h4>
+                            <div class="space-y-4">
                                 ${panel.tests.map(test => `
-                                    <div class="bg-gray-50 p-3 rounded">
-                                        <div class="text-sm font-medium text-gray-900">${test.marker}</div>
-                                        <div class="text-lg font-bold text-blue-600">${test.value}</div>
+                                    <div class="bg-gray-50 p-4 rounded-lg">
+                                        <h5 class="font-medium text-gray-800 mb-2">${test.test_name}</h5>
+                                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+                                            ${test.results.map(result => `
+                                                <div class="bg-white p-3 rounded border">
+                                                    <div class="text-sm font-medium text-gray-900">${result.marker}</div>
+                                                    <div class="text-lg font-bold text-blue-600">${result.value}</div>
+                                                </div>
+                                            `).join('')}
+                                        </div>
                                     </div>
                                 `).join('')}
                             </div>
