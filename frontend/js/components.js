@@ -38,7 +38,7 @@ class Components {
             (latestValue.value > data[data.length - 2].value ? '↗' : '↘') : '→';
         
         return `
-            <div class="metric-card p-4 mb-4">
+            <div class="metric-card p-4 mb-8">
                 <div class="flex justify-between items-start">
                     <div>
                         <h4 class="font-semibold text-gray-900">${marker}</h4>
@@ -91,18 +91,11 @@ class Components {
                     ${report.panels.map(panel => `
                         <div>
                             <h4 class="font-medium text-gray-700 mb-3 text-base">${panel.name}</h4>
-                            <div class="space-y-4">
+                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                                 ${panel.tests.map(test => `
-                                    <div class="bg-gray-50 p-4 rounded-lg">
-                                        <h5 class="font-medium text-gray-800 mb-2">${test.test_name}</h5>
-                                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
-                                            ${test.results.map(result => `
-                                                <div class="bg-white p-3 rounded border">
-                                                    <div class="text-sm font-medium text-gray-900">${result.marker}</div>
-                                                    <div class="text-lg font-bold text-blue-600">${result.value}</div>
-                                                </div>
-                                            `).join('')}
-                                        </div>
+                                    <div class="bg-gray-50 p-4 rounded-lg flex flex-col items-center justify-center">
+                                        <h5 class="font-medium text-gray-800 mb-2 text-center">${test.marker}</h5>
+                                        <div class="text-lg font-bold text-blue-600 text-center">${test.value}</div>
                                     </div>
                                 `).join('')}
                             </div>
