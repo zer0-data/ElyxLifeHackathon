@@ -1,6 +1,6 @@
 Flask==2.3.3
 Flask-CORS==4.0.0
 pandas==2.1.4
-numpy==1.26.4
 python-dotenv==1.0.0
 openai==0.28.1
+numpy==1.26.4
