@@ -44,20 +44,24 @@ class Charts {
         Object.keys(biomarkerData.grouped_data).forEach(marker => {
             const data = biomarkerData.grouped_data[marker];
             const color = colors[colorIndex % colors.length];
+            // Only show the last 6 data points for concise charts
+            const conciseData = data.slice(-6);
             
             console.log(`Creating chart for ${marker} with ${data.length} data points`);
             
             // Create container for this biomarker
             const chartContainer = document.createElement('div');
             chartContainer.className = 'bg-white p-4 rounded-lg shadow border';
+            chartContainer.style.maxWidth = '350px';
+            chartContainer.style.height = '240px';
             chartContainer.innerHTML = `
                 <h4 class="font-semibold text-gray-800 mb-2 text-sm">${marker}</h4>
                 <div class="mb-2">
-                    <span class="text-xl font-bold text-blue-600">${data[data.length - 1].value} ${data[data.length - 1].unit}</span>
-                    <span class="text-xs text-gray-500 block">${data[data.length - 1].date}</span>
+                    <span class="text-xl font-bold text-blue-600">${conciseData[conciseData.length - 1].value} ${conciseData[conciseData.length - 1].unit}</span>
+                    <span class="text-xs text-gray-500 block">${conciseData[conciseData.length - 1].date}</span>
                 </div>
-                <canvas id="chart-${marker.replace(/[^a-zA-Z0-9]/g, '')}" width="200" height="100"></canvas>
-                <p class="text-xs text-gray-600 mt-2">${data[data.length - 1].notes}</p>
+                <canvas id="chart-${marker.replace(/[^a-zA-Z0-9]/g, '')}" style="width:100%;height:180px;"></canvas>
+                <p class="text-xs text-gray-600 mt-2">${conciseData[conciseData.length - 1].notes}</p>
             `;
             
             container.appendChild(chartContainer);
@@ -68,9 +72,9 @@ class Charts {
                 this.biomarkerCharts[marker] = new Chart(ctx, {
                     type: 'line',
                     data: {
-                        labels: data.map(point => `Month ${point.month}`),
+                        labels: conciseData.map(point => `Month ${point.month}`),
                         datasets: [{
-                            data: data.map(point => point.value),
+                            data: conciseData.map(point => point.value),
                             borderColor: color,
                             backgroundColor: color + '20',
                             borderWidth: 2,
@@ -84,7 +88,7 @@ class Charts {
                     },
                     options: {
                         responsive: true,
-                        maintainAspectRatio: false,
+                        maintainAspectRatio: true,
                         plugins: {
                             legend: {
                                 display: false
@@ -137,11 +141,11 @@ class Charts {
                 chartContainer.innerHTML = `
                     <h4 class="font-semibold text-gray-800 mb-2 text-sm">${marker}</h4>
                     <div class="mb-2">
-                        <span class="text-xl font-bold text-blue-600">${data[data.length - 1].value} ${data[data.length - 1].unit}</span>
-                        <span class="text-xs text-gray-500 block">${data[data.length - 1].date}</span>
+                        <span class="text-xl font-bold text-blue-600">${conciseData[conciseData.length - 1].value} ${conciseData[conciseData.length - 1].unit}</span>
+                        <span class="text-xs text-gray-500 block">${conciseData[conciseData.length - 1].date}</span>
                     </div>
                     <p class="text-red-500 text-sm">Chart failed to load</p>
-                    <p class="text-xs text-gray-600 mt-2">${data[data.length - 1].notes}</p>
+                    <p class="text-xs text-gray-600 mt-2">${conciseData[conciseData.length - 1].notes}</p>
                 `;
             }
 
@@ -211,7 +215,7 @@ class Charts {
             data: { datasets },
             options: {
                 responsive: true,
-                maintainAspectRatio: false,
+                maintainAspectRatio: true,
                 plugins: {
                     title: {
                         display: true,
