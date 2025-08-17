@@ -184,7 +184,7 @@ def chat_query():
         
         # Call OpenAI API
         try:
-            response = openai.ChatCompletion.create(
+            response = openai.chat.completions.create(
                 model="gpt-3.5-turbo",
                 messages=[
                     {"role": "system", "content": "You are a helpful assistant that analyzes health data and provides insights about Rohan Patel's health journey."},
@@ -193,10 +193,8 @@ def chat_query():
                 max_tokens=1000,
                 temperature=0.7
             )
-            
             ai_response = response.choices[0].message.content
             return jsonify({"response": ai_response})
-            
         except Exception as openai_error:
             # Fallback response if OpenAI API fails
             return jsonify({
