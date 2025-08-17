@@ -68,6 +68,12 @@ def get_member_biomarkers():
         # Convert to JSON format
         biomarkers_data = biomarkers_df.to_dict('records')
         
+        # Clean up any NaN values that might exist
+        for record in biomarkers_data:
+            for key, value in record.items():
+                if pd.isna(value):
+                    record[key] = None
+        
         # Group by marker name for easier frontend consumption
         grouped_data = {}
         for record in biomarkers_data:
@@ -97,7 +103,24 @@ def get_member_wearables():
         if wearables_df.empty:
             return jsonify({"error": "No wearables data found"}), 404
         
+        # Replace empty strings and 'N/A' with None for proper JSON serialization
+        wearables_df = wearables_df.replace(['', 'N/A', 'NaN'], None)
+        
+        # Convert numeric columns to proper types, handling None values
+        numeric_columns = ['sleep_score_100', 'hrv_ms', 'rhr_bpm', 'respiratory_rate_brpm', 'strain_score_21', 'recovery_score_pct']
+        for col in numeric_columns:
+            if col in wearables_df.columns:
+                wearables_df[col] = pd.to_numeric(wearables_df[col], errors='coerce')
+        
+        # Convert to dict and replace NaN values with None for proper JSON serialization
         wearables_data = wearables_df.to_dict('records')
+        
+        # Clean up NaN values that might still exist
+        for record in wearables_data:
+            for key, value in record.items():
+                if pd.isna(value):
+                    record[key] = None
+        
         return jsonify(wearables_data)
     except Exception as e:
         return jsonify({"error": str(e)}), 500
